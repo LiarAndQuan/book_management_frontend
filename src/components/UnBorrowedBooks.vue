@@ -9,7 +9,9 @@
                 <el-table-column prop="publishTime" label="出版日期" width="200"></el-table-column>
                 <el-table-column prop="inventory" label="剩余数量" width="200"></el-table-column>
                 <el-table-column label="操作">
-                    <el-button>借阅</el-button>
+                    <template v-slot="scope">
+                        <el-button @click="commit(scope.row.id)">借阅</el-button>
+                    </template>
                 </el-table-column>
             </el-table-column>
         </el-table>
@@ -20,11 +22,19 @@
 <script setup lang="ts">
 
 import {onMounted, ref} from "vue";
-import {getUnBorrowedBooks} from "@/api/UnBorrowedBooks.ts";
+import {borrowBook, getUnBorrowedBooks} from "@/api/UnBorrowedBooks.ts";
 
 let bookData = ref([]);
 
 let user = JSON.parse(localStorage.getItem('user'));
+
+function commit(bookId: number) {
+    borrowBook(bookId, user.id).then(
+        (response) => {
+            bookData.value = bookData.value.filter(item => item.id !== bookId);
+        }
+    )
+}
 
 onMounted(
     () => {

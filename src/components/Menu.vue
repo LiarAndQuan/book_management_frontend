@@ -6,8 +6,6 @@
                 router
                 default-active="1"
                 class="el-menu-vertical-demo"
-                @open="handleOpen"
-                @close="handleClose"
             >
                 <el-menu-item index="1">
                     <el-icon>
@@ -27,6 +25,12 @@
                     </el-icon>
                     <span>归还图书</span>
                 </el-menu-item>
+                <el-menu-item index="5">
+                    <el-icon>
+                        <icon-menu/>
+                    </el-icon>
+                    <span>借还记录</span>
+                </el-menu-item>
                 <el-menu-item index="4">
                     <el-icon>
                         <setting/>
@@ -42,14 +46,6 @@
 <script lang="ts" setup>
 
 import {Document, Location, Menu as IconMenu, Setting,} from '@element-plus/icons-vue'
-
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-
 </script>
 
 <style>

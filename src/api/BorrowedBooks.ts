@@ -7,3 +7,10 @@ export function getBorrowedBooks(userId: number) {
         method: 'get'
     })
 }
+
+export function returnBook(bookId: number, userId: number) {
+    return request({
+        url: 'returnBook/' + bookId + '/' + userId,
+        method: 'get'
+    })
+}
