@@ -13,7 +13,7 @@
                     <el-icon>
                         <document/>
                     </el-icon>
-                    <span>图书查询</span>
+                    <span>所有图书</span>
                 </el-menu-item>
                 <el-menu-item index="2">
                     <el-icon>
@@ -41,12 +41,7 @@
 
 <script lang="ts" setup>
 
-import {
-    Document,
-    Menu as IconMenu,
-    Setting,
-    Location,
-} from '@element-plus/icons-vue'
+import {Document, Location, Menu as IconMenu, Setting,} from '@element-plus/icons-vue'
 
 const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)

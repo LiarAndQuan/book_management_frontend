@@ -20,15 +20,15 @@
 <script setup lang="ts">
 
 import {onMounted, ref} from "vue";
+import {getUnBorrowedBooks} from "@/api/UnBorrowedBooks.ts";
 
 let bookData = ref([]);
 
-import {getBorrowedBooks} from "@/api/BorrowedBooks.ts";
-
 let user = JSON.parse(localStorage.getItem('user'));
+
 onMounted(
     () => {
-        getBorrowedBooks(user.id).then(
+        getUnBorrowedBooks(user.id).then(
             (response) => {
                 bookData.value = response.data;
             }

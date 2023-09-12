@@ -8,13 +8,12 @@
 
 <script setup lang="ts">
 import {ref} from "vue";
+import {login} from "@/api/login.ts";
 
 let user = ref({
     username: '',
     password: ''
 })
-
-import {login} from "@/api/login.ts";
 
 function login1() {
     login(user.value).then(
@@ -35,4 +34,5 @@ function login1() {
     margin: 300px auto;
     border: black solid 1px;
 }
+
 </style>

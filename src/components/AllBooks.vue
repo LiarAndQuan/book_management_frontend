@@ -1,6 +1,6 @@
 <template>
     <div class="all-books-container">
-        <el-table :data="bookData" border >
+        <el-table :data="bookData" border height="600">
             <el-table-column label="所有图书">
                 <el-table-column prop="id" label="id" width="200"></el-table-column>
                 <el-table-column prop="name" label="书名" width="200"></el-table-column>
