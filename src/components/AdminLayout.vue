@@ -1,21 +1,23 @@
 <template>
     <div class="layout-container">
         <div class="slide">
-            <Menu></Menu>
+            <AdminMenu></AdminMenu>
         </div>
         <div class="main">
             <div class="main-container">
                 <router-view>
+
                 </router-view>
             </div>
+
         </div>
     </div>
 
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
-import Menu from "@/components/Menu.vue";
+import AdminMenu from "@/components/AdminMenu.vue";
 </script>
 
 <style scoped>
@@ -25,8 +27,8 @@ import Menu from "@/components/Menu.vue";
     height: 100vh;
 
     .slide {
-        width: 20%;
         margin: 70px auto;
+        width: 20%;
 
         flex-wrap: wrap;
 

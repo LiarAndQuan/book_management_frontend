@@ -1,14 +1,14 @@
 <template>
 
-    <div class="all-books-container">
-        <el-table :data="bookData" border>
-            <el-table-column label="可借阅图书">
-                <el-table-column prop="id" label="id" width="200"></el-table-column>
-                <el-table-column prop="name" label="书名" width="200"></el-table-column>
-                <el-table-column prop="author" label="作者" width="200"></el-table-column>
-                <el-table-column prop="publishTime" label="出版日期" width="200"></el-table-column>
-                <el-table-column prop="inventory" label="剩余数量" width="200"></el-table-column>
-                <el-table-column label="操作">
+    <div class="books-container">
+        <el-table :data="bookData" border height="600">
+            <el-table-column align="center" label="可借阅图书">
+                <el-table-column align="center" label="id" prop="id"></el-table-column>
+                <el-table-column align="center" label="书名" prop="name"></el-table-column>
+                <el-table-column align="center" label="作者" prop="author"></el-table-column>
+                <el-table-column align="center" label="出版日期" prop="publishTime"></el-table-column>
+                <el-table-column align="center" label="剩余数量" prop="inventory"></el-table-column>
+                <el-table-column align="center" label="操作">
                     <template v-slot="scope">
                         <el-button @click="commit(scope.row.id)">借阅</el-button>
                     </template>
@@ -48,5 +48,7 @@ onMounted(
 </script>
 
 <style scoped>
-
+.books-container {
+    margin-right: 100px;
+}
 </style>

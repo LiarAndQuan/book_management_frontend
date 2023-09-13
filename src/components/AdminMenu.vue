@@ -7,12 +7,11 @@
                 退出登录
             </el-button>
         </div>
-
         <div class="menu-item-container">
             <el-menu
-                router
-                default-active="1"
                 class="el-menu-vertical-demo"
+                default-active="1"
+                router
             >
                 <el-menu-item index="1">
                     <el-icon>
@@ -24,15 +23,21 @@
                     <el-icon>
                         <location/>
                     </el-icon>
-                    <span>借阅图书</span>
+                    <span>添加图书</span>
                 </el-menu-item>
                 <el-menu-item index="3">
                     <el-icon>
                         <icon-menu/>
                     </el-icon>
-                    <span>归还图书</span>
+                    <span>删除图书</span>
                 </el-menu-item>
                 <el-menu-item index="4">
+                    <el-icon>
+                        <setting/>
+                    </el-icon>
+                    <span>借还记录</span>
+                </el-menu-item>
+                <el-menu-item index="5">
                     <el-icon>
                         <setting/>
                     </el-icon>
@@ -56,7 +61,6 @@ function submit() {
     localStorage.removeItem("user");
     router.push('/');
 }
-
 </script>
 
 <style>
@@ -64,7 +68,6 @@ function submit() {
 .menu-container {
 
     .menu-title {
-        margin-left: 100px;
         width: 100%;
     }
 
