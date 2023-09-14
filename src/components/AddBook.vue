@@ -25,12 +25,8 @@ import {ref} from "vue";
 import {addbook} from "@/api/addbook.ts";
 import {ElMessage} from "element-plus";
 
-let book = ref({
-    name: '',
-    author: '',
-    publishTime: '',
-    inventory: 0
-})
+
+let book = ref({})
 
 function submit() {
     addbook(book.value).then(

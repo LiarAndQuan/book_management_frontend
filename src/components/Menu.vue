@@ -1,18 +1,12 @@
 <template>
     <div class="menu-container">
-        <h2 class="menu-title">菜单</h2>
-        <div class="aaa">
-            当前用户:{{ user.name }}
-            <el-button class="botu" @click="submit">
-                退出登录
-            </el-button>
-        </div>
 
         <div class="menu-item-container">
             <el-menu
                 router
                 default-active="1"
-                class="el-menu-vertical-demo"
+                class="el-menu"
+
             >
                 <el-menu-item index="1">
                     <el-icon>
@@ -22,19 +16,25 @@
                 </el-menu-item>
                 <el-menu-item index="2">
                     <el-icon>
-                        <location/>
+                        <CirclePlus/>
                     </el-icon>
                     <span>借阅图书</span>
                 </el-menu-item>
                 <el-menu-item index="3">
                     <el-icon>
-                        <icon-menu/>
+                        <Remove/>
                     </el-icon>
                     <span>归还图书</span>
                 </el-menu-item>
+                <el-menu-item index="5">
+                    <el-icon>
+                        <MoreFilled/>
+                    </el-icon>
+                    <span>借还记录</span>
+                </el-menu-item>
                 <el-menu-item index="4">
                     <el-icon>
-                        <setting/>
+                        <Edit/>
                     </el-icon>
                     <span>修改信息</span>
                 </el-menu-item>
@@ -46,40 +46,17 @@
 
 <script lang="ts" setup>
 
-import {Document, Location, Menu as IconMenu, Setting,} from '@element-plus/icons-vue'
-import {useRouter} from "vue-router";
-
-let router = useRouter();
-let user = JSON.parse(localStorage.getItem("user"));
-
-function submit() {
-    localStorage.removeItem("user");
-    router.push('/');
-}
-
+import {CirclePlus, Document, Edit, MoreFilled, Remove} from '@element-plus/icons-vue'
 </script>
 
 <style>
 
 .menu-container {
-
-    .menu-title {
-        margin-left: 100px;
-        width: 100%;
-    }
-
-    .menu-item-container {
-        width: 70%;
-    }
+    margin-top: 122px;
 }
 
-.botu {
-    margin-left: 30px;
-}
-
-.aaa {
-    margin: 20px auto;
-    padding-left: 10px;
+.el-menu {
+    height: 600px;
 }
 
 </style>

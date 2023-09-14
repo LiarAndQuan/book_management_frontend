@@ -7,6 +7,8 @@
 </script>
 
 <style>
-
+body {
+    background: #f9fafb;
+}
 
 </style>

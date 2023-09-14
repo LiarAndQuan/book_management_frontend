@@ -37,6 +37,10 @@ const router = createRouter({
                 {
                     path: '4',
                     component: Message
+                },
+                {
+                    path: '5',
+                    component: Record
                 }
             ]
         },
